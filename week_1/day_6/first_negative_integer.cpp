@@ -10,38 +10,30 @@ vector<ll> printFirstNegativeInteger(ll A[], ll N, ll K)
     vector<ll> v;
     queue<pair<ll, ll>> q;
     for (ll i = 0; i < N; i++)
-    {
         if (A[i] < 0)
-        {
             q.push({A[i], i});
-        }
-    }
+
     while (r < N)
     {
         if ((r - l + 1) == K)
         {
             ll idx = q.front().second;
             if (!q.empty() && idx < l)
-            {
                 q.pop();
-            }
+
             ll val = q.front().first;
             idx = q.front().second;
+
             if (!q.empty() && (idx >= l && idx <= r))
-            {
                 v.push_back(val);
-            }
             else
-            {
                 v.push_back(0);
-            }
+
             l++;
             r++;
         }
         else
-        {
             r++;
-        }
     }
     return v;
 }
