@@ -1,4 +1,3 @@
-
 // https://atcoder.jp/contests/abc051/tasks/abc051_b?lang=en
 
 #include <bits/stdc++.h>
