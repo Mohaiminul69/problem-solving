@@ -1,7 +1,6 @@
 // https://codeforces.com/problemset/problem/1610/B
 
 #include <bits/stdc++.h>
-#define ll long long int
 using namespace std;
 
 bool isPalindrome(const vector<int> &v, int valueToSkip)
