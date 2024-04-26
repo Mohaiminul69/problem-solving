@@ -5,7 +5,7 @@ using namespace std;
 
 int main()
 {
-    int n, q, x;
+    int n, q, x, l, r, res, mid;
     cin >> n >> q;
     vector<int> v(n);
     for (int i = 0; i < n; i++)
@@ -13,9 +13,19 @@ int main()
 
     while (q--)
     {
-        cin >> x;
-        auto it = lower_bound(v.begin(), v.end(), x);
-        cout << it - v.begin() + 1 << endl;
+        cin >> x, l = 0, r = n - 1, res = -1;
+
+        while (l <= r)
+        {
+            mid = (l + r) / 2;
+
+            if (x > v[mid])
+                res = mid, l = mid + 1;
+            else
+                r = mid - 1;
+        }
+
+        cout << res + 2 << '\n';
     }
 
     return 0;
