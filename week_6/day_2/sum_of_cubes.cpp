@@ -28,7 +28,7 @@ int main()
 
             while (l <= r)
             {
-                mid = l + (r - l) / 2;
+                mid = (l + r) / 2;
                 if (pws[mid] == need)
                 {
                     found++;
